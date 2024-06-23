@@ -1,6 +1,7 @@
 import type { Config } from 'tailwindcss'
 
 const svgToDataUri = require('mini-svg-data-uri')
+import animate from 'tailwindcss-animate'
 
 const colors = require('tailwindcss/colors')
 const {
