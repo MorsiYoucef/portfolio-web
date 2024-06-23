@@ -1,7 +1,7 @@
 'use client'
 
-import { useEffect } from 'react'
-import { motion, stagger, useAnimate } from 'framer-motion'
+import { useEffect, useRef } from 'react'
+import { motion, useAnimation } from 'framer-motion'
 import { cn } from '@/utils/cn'
 
 export const TextGenerateEffect = ({
@@ -11,36 +11,43 @@ export const TextGenerateEffect = ({
   words: string
   className?: string
 }) => {
-  const [scope, animate] = useAnimate()
-  let wordsArray = words.split(' ')
+  const controls = useAnimation()
+  const scope = useRef<HTMLDivElement>(null)
+
+  const wordsArray = words.split(' ')
+
   useEffect(() => {
-    animate(
-      'span',
-      {
+    if (scope.current) {
+      controls.set({
+        opacity: 0,
+      })
+
+      controls.start({
         opacity: 1,
-      },
-      {
-        duration: 2,
-        delay: stagger(0.2),
-      }
-    )
-  }, [scope.current])
+        transition: {
+          duration: 2,
+          delay: 0.2, // Set a static delay here instead of stagger(0.2)
+        },
+      })
+    }
+  }, [wordsArray, controls])
 
   const renderWords = () => {
     return (
       <motion.div ref={scope}>
-        {wordsArray.map((word, idx) => {
-          return (
-            <motion.span
-              key={word + idx}
-              className={`${
-                idx > 3 ? 'text-purple ' : 'dark:text-white text-black'
-              }  opacity-0`}
-            >
-              {word}{' '}
-            </motion.span>
-          )
-        })}
+        {wordsArray.map((word, idx) => (
+          <motion.span
+            key={word + idx}
+            className={`${
+              idx > 3 ? 'text-purple ' : 'dark:text-white text-black'
+            } opacity-0`}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 2, delay: idx * 0.2 }} // Optional: stagger effect
+          >
+            {word}{' '}
+          </motion.span>
+        ))}
       </motion.div>
     )
   }
@@ -48,7 +55,7 @@ export const TextGenerateEffect = ({
   return (
     <div className={cn('font-bold', className)}>
       <div className="mt-4">
-        <div className=" dark:text-white text-black text-3xl text-center xl:text-7xl md:text-4xl lg:text-5xl leading-snug tracking-wide">
+        <div className="dark:text-white text-black text-3xl text-center xl:text-7xl md:text-4xl lg:text-5xl leading-snug tracking-wide">
           {renderWords()}
         </div>
       </div>
