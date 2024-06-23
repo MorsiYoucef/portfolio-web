@@ -23,12 +23,14 @@ const RecentProject = () => {
                   className=" relative w-full h-full
                  overflow-hidden lg:rounded-3xl bg-[#13162d]"
                 >
-                  <Image src="/bg.png" alt="bg-img" />
+                  <Image src="/bg.png" alt="bg-img" width={100} height={100} />
                 </div>
                 <Image
                   src={img}
                   alt={title}
                   className=" z-10 absolute bottom-0"
+                  width={300}
+                  height={300}
                 />
               </div>
               <div>
@@ -47,7 +49,13 @@ const RecentProject = () => {
                       style={{ transform: ` translateX(-${5 * index * 2}px)` }}
                       className=" border border-white/[0.2] rounded-full bg-black lg:w-9 lg:h-9 w-8 h-8 flex justify-center items-center"
                     >
-                      <Image src={icon} alt={icon} className=" p-2"></Image>
+                      <Image
+                        src={icon}
+                        alt={icon}
+                        className=" p-2"
+                        width={300}
+                        height={300}
+                      />
                     </div>
                   ))}
                 </div>

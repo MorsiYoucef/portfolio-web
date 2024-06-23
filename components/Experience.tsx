@@ -21,6 +21,8 @@ const Experience = () => {
                 src={work.thumbnail}
                 alt={work.thumbnail}
                 className=" lg:w-32 md:w-20 w-16"
+                width={300}
+                height={300}
               />
               <div className=" lg:ms-5">
                 <h1 className=" text-start text-xl md:text-2xl font-bold">

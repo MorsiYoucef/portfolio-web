@@ -8,10 +8,12 @@ import Image from 'next/image'
 const Footer = () => {
   return (
     <footer className="w-full pt-20 pb-10" id="contact">
-      <div className="w-full absolute left-0 -bottom-72 min-h-96">
+      <div className="absolute left-0 -bottom-72 min-h-96">
         <Image
           src="/footer-grid.svg"
           alt="grid"
+          width={100}
+          height={100}
           className="w-full h-full opacity-50"
         />
       </div>
@@ -21,8 +23,8 @@ const Footer = () => {
           presence to the next level?
         </h1>
         <p className="text-white-200 md:mt-10 my-5 text-center">
-          Reach out to me today and let's discuss how I can help you achieve
-          your goals.
+          Reach out to me today and let&apos;s discuss how I can help you
+          achieve your goals.
         </p>
         <a href="mailto:morsiyoucef.pro@gmail.com">
           <MagicButton
@@ -54,7 +56,7 @@ const Footer = () => {
             <IoLogoLinkedin size={30} />
           </a>
           <a
-            href="http://twitter.com/MorsiYoucef"
+            href="https://twitter.com/y0c0de"
             target="_blank"
             rel="noopener noreferrer"
             className="cursor-pointer"
