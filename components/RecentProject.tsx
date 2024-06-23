@@ -2,6 +2,7 @@ import { projects } from '@/data'
 import { PinContainer } from './ui/3d-pin'
 import { AnimatedTooltip } from './ui/animated-tooltip'
 import { FaLocationArrow } from 'react-icons/fa'
+import Image from 'next/image'
 
 const RecentProject = () => {
   return (
@@ -22,9 +23,9 @@ const RecentProject = () => {
                   className=" relative w-full h-full
                  overflow-hidden lg:rounded-3xl bg-[#13162d]"
                 >
-                  <img src="/bg.png" alt="bg-img" />
+                  <Image src="/bg.png" alt="bg-img" />
                 </div>
-                <img
+                <Image
                   src={img}
                   alt={title}
                   className=" z-10 absolute bottom-0"
@@ -46,7 +47,7 @@ const RecentProject = () => {
                       style={{ transform: ` translateX(-${5 * index * 2}px)` }}
                       className=" border border-white/[0.2] rounded-full bg-black lg:w-9 lg:h-9 w-8 h-8 flex justify-center items-center"
                     >
-                      <img src={icon} alt={icon} className=" p-2"></img>
+                      <Image src={icon} alt={icon} className=" p-2"></Image>
                     </div>
                   ))}
                 </div>

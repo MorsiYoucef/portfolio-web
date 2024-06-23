@@ -3,12 +3,13 @@ import MagicButton from './ui/MagicButton'
 import { FaGithub } from 'react-icons/fa'
 import { IoLogoLinkedin } from 'react-icons/io5'
 import { RiTwitterXFill } from 'react-icons/ri'
+import Image from 'next/image'
 
 const Footer = () => {
   return (
     <footer className="w-full pt-20 pb-10" id="contact">
       <div className="w-full absolute left-0 -bottom-72 min-h-96">
-        <img
+        <Image
           src="/footer-grid.svg"
           alt="grid"
           className="w-full h-full opacity-50"

@@ -5,6 +5,7 @@ import { BackgroundGradientAnimation } from './BackgroundGradientAnimation'
 import { GridGlob } from './GridGlob'
 import { FcCheckmark } from 'react-icons/fc'
 import { useState } from 'react'
+import Image from 'next/image'
 
 import MagicButton from './MagicButton'
 import { IoCopyOutline } from 'react-icons/io5'
@@ -67,7 +68,7 @@ export const BentoGridItem = ({
       <div className={`${id === 6 && ' flex justify-center'} h-full `}>
         <div className=" absolute top-0 w-full h-full">
           {img && (
-            <img
+            <Image
               src={img}
               alt={img}
               className={cn(imgClassName, 'object-cover object-center')}
@@ -81,7 +82,7 @@ export const BentoGridItem = ({
         }`}
       >
         {spareImg && (
-          <img
+          <Image
             src={spareImg}
             alt={spareImg}
             className={' object-cover object-center w-full h-full'}
