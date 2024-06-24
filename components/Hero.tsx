@@ -6,14 +6,6 @@ import { TextGenerateEffect } from './ui/TextGenerateEffect'
 const Hero = () => {
   return (
     <div className=" pb-20 pt-36 font-sans" id="home">
-      <video
-        autoPlay
-        muted
-        loop
-        className=" rotate-180 absolute top-[-500px] h-[900px] w-full left-0 z-[1] object-cover "
-      >
-        <source src="/blackhole.webm" type="video/webm" />
-      </video>
       <div>
         <Spotlight
           className=" -top-40 -left-10 md:-left-32 md:-top-20 h-screen"
@@ -39,7 +31,7 @@ const Hero = () => {
             words=" Transforming Concept into Seamless User Experiences"
           />
         </div>
-        <p className=" text-center lg:text-2xl">
+        <p className=" text-center lg:text-2xl text-xl">
           Hi, I&apos;am{' '}
           <span className=" text-purple font-bold">MORSI YOUCEF</span> a
           software engineer Based in Algiers

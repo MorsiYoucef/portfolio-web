@@ -97,13 +97,17 @@ export const BentoGridItem = ({
       <div
         className={cn(
           titleClassName,
-          'group-hover/bento:translate-x-2 transition duration-200 relative md:h-full min-h-40 flex flex-col lg:px-10'
+          'group-hover/bento:translate-x-2 p-4 transition duration-200 relative md:h-full flex flex-col lg:px-10'
         )}
       >
         <div className="font-sans font-extralight text-[#c1c2d3] text-sm md:text-xs lg:text-base">
           {description}
         </div>
-        <div className=" font-sans font-bold text-lg lg:text-2xl max-w-96 z-10 ">
+        <div
+          className={`font-sans relative font-bold text-lg lg:text-2xl max-w-96 z-10 ${
+            id === 4 && 'relative bottom-5'
+          } ${id === 2 && ' relative bottom-8'}`}
+        >
           {title}
         </div>
       </div>
@@ -136,17 +140,8 @@ export const BentoGridItem = ({
       )}
       {id === 6 && (
         <div className=" mt-5 relative">
-          <div className={`absolute -bottom-5 right-0`}>
-            {/* <Lottie
-              options={{
-                loop: copied,
-                autoplay: copied,
-                animationData: animationData,
-                rendererSettings: { preserveAspectRatio: 'xMidYMid slice' },
-              }}
-            /> */}
-          </div>
-          <div className=" absolute right-40 bottom-16 lg:bottom-10 lg:right-[25%]">
+          <div className={`absolute -bottom-5 right-0`}></div>
+          <div className=" flex justify-center items-center lg:bottom-10 lg:right-[25%]">
             <MagicButton
               title={copied ? 'Email copied' : 'Copy my Email'}
               icon={copied ? <FcCheckmark /> : <IoCopyOutline />}
