@@ -11,7 +11,7 @@ const Footer = () => {
     <WavyBackground className=" py-5">
       <div className="text-center">
         <p className="text-2xl md:text-4xl lg:text-5xl text-center text-white font-bold inter-var">
-          Ready to take <span className="text-purple">Your</span> digital
+          Ready to take <span className="text-purple">Your digital </span>
           presence to the next level?
         </p>
         <p className="text-base md:text-lg mt-4 text-white font-normal inter-var">
