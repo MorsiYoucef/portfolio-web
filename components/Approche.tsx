@@ -24,7 +24,7 @@ export const Approche = () => {
         <Card
           title="Progress Update"
           icon={<AceternityIcon order="Phase 2" />}
-          desc="One we agree on the plan, I cue my lofi playlist and dive into coding. From initial sketches to polished code, I keep you updated every step of the way"
+          desc="Once we agree on the detailed plan, I cue my lofi playlist and dive into coding. From initial sketches to polished code, I keep you updated every crucial step of the way."
         >
           <CanvasRevealEffect
             animationSpeed={3}
@@ -89,14 +89,14 @@ const Card = ({
         )}
       </AnimatePresence>
 
-      <div className="relative z-20">
+      <div className=" relative z-20">
         <div className="text-center group-hover/canvas-card:-translate-y-4 group-hover/canvas-card:opacity-0 transition duration-200 w-full  mx-auto flex items-center justify-center">
           {icon}
         </div>
-        <h2 className="dark:text-white text-3xl text-center opacity-0 group-hover/canvas-card:opacity-100 relative z-10 text-black mt-4  font-bold group-hover/canvas-card:text-white group-hover/canvas-card:-translate-y-2 transition duration-200">
+        <h2 className="dark:text-white lg:text-3xl md:text-3xl text-2xl text-center opacity-0 group-hover/canvas-card:opacity-100 relative z-10 text-black mt-4  font-bold group-hover/canvas-card:text-white group-hover/canvas-card:-translate-y-2 transition duration-200">
           {title}
         </h2>
-        <h2 className="dark:text-white text-xl text-center opacity-0 group-hover/canvas-card:opacity-100 relative z-10 text-black mt-4 group-hover/canvas-card:text-white group-hover/canvas-card:-translate-y-2 transition duration-200">
+        <h2 className="dark:text-white lg:text-xl md:text-xl  text-center opacity-0 group-hover/canvas-card:opacity-100 relative z-10 text-black mt-4 group-hover/canvas-card:text-white group-hover/canvas-card:-translate-y-2 transition duration-200">
           {desc}
         </h2>
       </div>
@@ -107,7 +107,9 @@ const Card = ({
 const AceternityIcon = ({ order }: { order: string }) => {
   return (
     <div className=" flex justify-center items-center">
-      <button className="inline-flex absolute text-xl right-28 top-20 h-12 animate-shimmer items-center justify-center rounded-md border border-slate-800 bg-[linear-gradient(110deg,#000103,45%,#1e2631,55%,#000103)] bg-[length:200%_100%] px-6 font-medium text-slate-400 transition-colors focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50">
+      <button
+        className={`inline-flex text-xl h-12 animate-shimmer relative xl:top-20 top-20 items-center justify-center rounded-md border border-slate-800 bg-[linear-gradient(110deg,#000103,45%,#1e2631,55%,#000103)] bg-[length:200%_100%] px-6 font-medium text-slate-400 transition-colors focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50`}
+      >
         {order}
       </button>
     </div>
